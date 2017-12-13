@@ -29,14 +29,12 @@ struct PrintRandomCharacters {
         }
 
         void randLowercase() {
-                auto lc = lowercase.map!text.array;
                 auto val = choice(lowercase.map!text.array);
                 write(val);
         }
 
         void randDigit() {
-                auto lc = digits.map!text.array;
-                auto val = choice(lc);
+                auto val = choice(digits.map!text.array);
                 write(val);
         }
 
