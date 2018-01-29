@@ -1,20 +1,23 @@
 #!/usr/bin/env rdmd
 
 import gen;
+import std.stdio : writeln;
 
-void main() {
-        auto printRandomCharacters = new PrintRandomCharacters;
-        printRandomCharacters.randUppercase;
-        printRandomCharacters.randLowercaseVocal;
-        printRandomCharacters.randLowercaseConsonant;
-        printRandomCharacters.randLowercaseConsonant;
-        printRandomCharacters.randLowercaseVocal;
-        printRandomCharacters.randLowercaseConsonant;
-        printRandomCharacters.randLowercaseConsonant;
-        printRandomCharacters.randLowercaseVocal;
-        printRandomCharacters.randLowercaseConsonant;
-        printRandomCharacters.randDigit;
-        printRandomCharacters.randDigit;
-        printRandomCharacters.randSymbol;
-        writeln();
+void main()
+{
+        PrintRandomCharacters p;
+        string pass;
+        pass ~= p.randUppercase;
+        pass ~= p.randLowercaseVocal;
+        pass ~= p.randLowercaseConsonant;
+        pass ~= p.randLowercaseConsonant;
+        pass ~= p.randLowercaseVocal;
+        pass ~= p.randLowercaseConsonant;
+        pass ~= p.randLowercaseConsonant;
+        pass ~= p.randLowercaseVocal;
+        pass ~= p.randLowercaseConsonant;
+        pass ~= p.randDigit;
+        pass ~= p.randDigit;
+        pass ~= p.randSymbol;
+        writeln(pass);
 }

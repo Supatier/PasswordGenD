@@ -6,41 +6,42 @@ import std.ascii : digits, lowercase;
 import std.conv : text;
 import std.meta : Alias;
 import std.random : choice;
-import std.stdio : write, writeln;
 
-struct PrintRandomCharacters {
-        auto symbols = "!@#$%^&*()-_=+[{]}\\|;:\"\',<.>/?".map!text.array;
-        auto uppercaseConsonants = "BCDFGHJKLMNPQRSTVWXYZ".map!text.array;
-        auto lowercaseConsonants = "bcdfghjklmnpqrstvwxyz".map!text.array;
-        auto lowercaseVocals = "aiueo".map!text.array;
-
-        void randUppercase() {
-                auto val = choice(uppercaseConsonants);
-                write(val);
+struct PrintRandomCharacters
+{
+private:
+        string[] symbols = "!@#$%^&*()-_=+[{]}\\|;:\"\',<.>/?".map!text.array;
+        string[] uppercaseConsonants = "BCDFGHJKLMNPQRSTVWXYZ".map!text.array;
+        string[] lowercaseConsonants = "bcdfghjklmnpqrstvwxyz".map!text.array;
+        string[] lowercaseVocals = "aiueo".map!text.array;
+public:
+        @safe string randUppercase()
+        {
+                return choice(uppercaseConsonants);
         }
 
-        void randLowercaseConsonant() {
-                auto val = choice(lowercaseConsonants);
-                write(val);
+        @safe string randLowercaseConsonant()
+        {
+                return choice(lowercaseConsonants);
         }
 
-        void randLowercaseVocal() {
-                auto val = choice(lowercaseVocals);
-                write(val);
+        @safe string randLowercaseVocal()
+        {
+                return choice(lowercaseVocals);
         }
 
-        void randLowercase() {
-                auto val = choice(lowercase.map!text.array);
-                write(val);
+        @safe string randLowercase()
+        {
+                return choice(lowercase.map!text.array);
         }
 
-        void randDigit() {
-                auto val = choice(digits.map!text.array);
-                write(val);
+        @safe string randDigit()
+        {
+                return choice(digits.map!text.array);
         }
 
-        void randSymbol() {
-                auto val = choice(symbols);
-                write(val);
+        @safe string randSymbol()
+        {
+                return choice(symbols);
         }
 }
