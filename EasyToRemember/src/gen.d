@@ -7,41 +7,34 @@ import std.conv : text;
 import std.meta : Alias;
 import std.random : choice;
 
-struct PrintRandomCharacters
-{
+struct PrintRandomCharacters {
 private:
         string[] symbols = "!@#$%^&*()-_=+[{]}\\|;:\"\',<.>/?".map!text.array;
         string[] uppercaseConsonants = "BCDFGHJKLMNPQRSTVWXYZ".map!text.array;
         string[] lowercaseConsonants = "bcdfghjklmnpqrstvwxyz".map!text.array;
         string[] lowercaseVocals = "aiueo".map!text.array;
 public:
-        @safe string randUppercase()
-        {
+        @safe string randUppercase() {
                 return choice(uppercaseConsonants);
         }
 
-        @safe string randLowercaseConsonant()
-        {
+        @safe string randLowercaseConsonant() {
                 return choice(lowercaseConsonants);
         }
 
-        @safe string randLowercaseVocal()
-        {
+        @safe string randLowercaseVocal() {
                 return choice(lowercaseVocals);
         }
 
-        @safe string randLowercase()
-        {
+        @safe string randLowercase() {
                 return choice(lowercase.map!text.array);
         }
 
-        @safe string randDigit()
-        {
+        @safe string randDigit() {
                 return choice(digits.map!text.array);
         }
 
-        @safe string randSymbol()
-        {
+        @safe string randSymbol() {
                 return choice(symbols);
         }
 }
